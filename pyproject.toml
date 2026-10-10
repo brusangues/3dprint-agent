@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "print3d"
+version = "0.3.0"
+description = "Modelagem paramétrica de peças para impressão 3D, com exportação STL"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Kernel booleano para CSG. Sem isso, o framework ainda funciona: as
+# peças compound são construídas sem booleana.
+csg = ["trimesh>=4.0", "manifold3d>=2.3"]
+# Preview PNG das peças.
+preview = ["matplotlib>=3.7"]
+dev = ["pytest>=7.0", "numpy>=1.24"]
+
+[tool.setuptools]
+packages = ["print3d"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

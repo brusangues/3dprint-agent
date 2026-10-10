@@ -1,0 +1,25 @@
+# print3d - modelagem paramétrica para impressão 3D
+#
+# Ambiente conda isolado.
+#
+#   conda env create -f environment.yml     # cria
+#   conda activate print3d                  # ativa
+#   pip install -e .                         # instala o print3d
+#
+# ou, sem ativar:
+#   conda run -n print3d python examples/make_cube.py
+#   conda run -n print3d python -m pytest tests/ -q
+
+name: print3d
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  # kernel booleano para CSG (união, subtração, interseção)
+  - trimesh
+  - manifold3d
+  # medidas e testes
+  - numpy
+  - pytest
+  # preview PNG (opcional, mas útil para conferir geometria)
+  - matplotlib

@@ -1,3 +1,11 @@
+out/*.png
+out/*.stl
+out/
+evidencia/
+examples/
+user/
+HERMES.md
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
